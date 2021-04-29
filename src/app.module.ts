@@ -4,14 +4,10 @@ import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      process.env.MONGODB_URI ||
-        'mongodb+srv://bunnies:bunnies@bunnieshole.hcttt.mongodb.net/bunnies',
-      {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-      },
-    ),
+    MongooseModule.forRoot('mongodb://localhost/bunnies', {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    }),
     ProductsModule,
   ],
   controllers: [],
